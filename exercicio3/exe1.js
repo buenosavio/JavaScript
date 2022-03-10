@@ -44,8 +44,28 @@ deleteAllSpace(textFormated)
    chamada caso algum dos números informados seja inválido.
    Esta função de Callback exibe somente a msg no console 'Algum número digitado foi inválido';*/
 
+let notValid="Algum número digitado é inválido!"
+
+function messageInvalidValue(notValid) {
+    console.log(notValid)
+}
+
+function calculator(numberOne, numberTwo) {
+    isNaN(numberOne)||isNaN(numberTwo) ? messageInvalidValue(notValid) : console.log(parseFloat(numberOne) + parseFloat(numberTwo))
+}
+calculator(1.5,15)
+
 
 /*4) Crie uma função de busca, que recebe 2 parâmetros (um array e um elemento) e retorna uma mensagem dizendo se aquele elemento
    existe no array e também qual a posição dele (índice)
    // Ex: minhaFuncao( ['a', 'cachorro', 255], 'cachorro' ) => retorna 'O elemento existe no array e a posição dele é: 1'
    // Ex: minhaFuncao( ['a', 'cachorro', 255], 'abacate' ) => retorna 'O elemento não existe no array'*/
+
+function finder(array, element) {
+    let positionElement = array.indexOf(element)
+    positionElement !== -1 ? console.log(`elemento existe no array e a posição dele é: ${positionElement}`) : console.log("elemento não existe no array")
+}
+
+finder( ['a', 'cachorro', 255], 'cachorro' )
+
+  
