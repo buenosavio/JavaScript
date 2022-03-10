@@ -4,80 +4,110 @@
 //    => deve retornar o array: [ 'c', 'texto' ] (pois removeu todos 'a');
 function removeDot(value) {
     return value !== '';
-  }
-  
-function removeCharArray(char, array){
+}
+
+function removeCharArray(char, array) {
     arrayFormated = array.toString().replaceAll(char, '').split(',').filter(removeDot)
     console.log(arrayFormated)
 }
 
-removeCharArray('a',  [ 'c', 'a', 'texto', 'a' ]  )
+removeCharArray('a', ['c', 'a', 'texto', 'a'])
 
 // 2) Crie uma função que receba como parâmetro um array de números e retorne
 //  	um array ordenado (NÃO pode usar a função array.sort());
 //    // ex. funcaoOrdenaArray( [4, 5, 7, 3, 0, 5, 2, 2] ) ===> retorna o array [ 0, 2, 2, 3, 4, 5, 5, 7 ] 
 
+function orderBy(array) {
+    for (var i = 0; i < array.length; i++) {
+        for (var j = 0; j < (array.length - i - 1); j++) {
+            if (array[j] > array[j + 1]) {
+                var tmp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = tmp;
+            }
+        }
+    }
 
-// 3) Crie uma função que recebe como parâmetro 2 arrays (quaisquer que sejam)
-// 	e retorne uma concatenação destes 2 arrays;
-
-function concatArray(firstArray, secondArray) {
-    arrayConcated = firstArray.concat(secondArray)
-    console.log(arrayConcated)
+    console.log(array)
 }
+    orderBy([3, 8, 4, 1, 5, 2])
 
-concatArray([1,2,3,4,5], ['abc','savio', 'dbc'])
+    // 3) Crie uma função que recebe como parâmetro 2 arrays (quaisquer que sejam)
+    // 	e retorne uma concatenação destes 2 arrays;
 
-// 4a) Tendo uma lista vazia [], crie uma função que recebe um elemento qualquer como parâmetro e que adiciona esse elemento à lista;
+    function concatArray(firstArray, secondArray) {
+        arrayConcated = firstArray.concat(secondArray)
+        console.log(arrayConcated)
+    }
 
-let littleArray=[]
+    concatArray([1, 2, 3, 4, 5], ['abc', 'savio', 'dbc'])
 
-function addElement(element){
-    littleArray.push(element)    
-    console.log(littleArray)
-}
-for (i=0;i<6;i++) {
-    addElement('teste'+i)
-}
+    // 4a) Tendo uma lista vazia [], crie uma função que recebe um elemento qualquer como parâmetro e que adiciona esse elemento à lista;
 
-// 4b) Crie duas funções, uma para remover o último elemento da lista e outra para remover o primeiro elemento da lista;
+    let littleArray = []
 
-function removeLastElement(){
-    littleArray.pop()    
-    console.log(littleArray)
-}
-removeLastElement()
+    function addElement(element) {
+        littleArray.push(element)
+        console.log(littleArray)
+    }
+    for (i = 0; i < 6; i++) {
+        addElement('teste' + i)
+    }
 
-function removeFirstElement(){
-    littleArray.shift()    
-    console.log(littleArray)
-}
-removeFirstElement()
+    // 4b) Crie duas funções, uma para remover o último elemento da lista e outra para remover o primeiro elemento da lista;
 
-// 4c) Crie uma função para remover um elemento específico da lista;
-// 	 // ex: Imagine que temos a lista [ 'a', 4, 'Tiago', 187 ]
-// 	 // e chamamos a função  removeElemento('Tiago')
-// 	 // deve remover o elemento 'Tiago' da lista, fazendo com que fique [ 'a', 4, 187 ]
-// 	 Obs: caso o elemento passado não exista na lista mostrar uma mensagem para o usuário informando.
+    function removeLastElement() {
+        littleArray.pop()
+        console.log(littleArray)
+    }
+    removeLastElement()
 
-function removeElement(element) {
-    let position = littleArray.indexOf(element)
-    position !== -1 ? littleArray.splice(position, 1) : console.log("elemento nao existe")
-}
+    function removeFirstElement() {
+        littleArray.shift()
+        console.log(littleArray)
+    }
+    removeFirstElement()
 
-removeElement('teste3')
+    // 4c) Crie uma função para remover um elemento específico da lista;
+    // 	 // ex: Imagine que temos a lista [ 'a', 4, 'Tiago', 187 ]
+    // 	 // e chamamos a função  removeElemento('Tiago')
+    // 	 // deve remover o elemento 'Tiago' da lista, fazendo com que fique [ 'a', 4, 187 ]
+    // 	 Obs: caso o elemento passado não exista na lista mostrar uma mensagem para o usuário informando.
 
+    function removeElement(element) {
+        let position = littleArray.indexOf(element)
+        position !== -1 ? littleArray.splice(position, 1) : console.log("elemento nao existe")
+    }
 
-// 5) Crie uma função que gera um número aleátorio entre 0 e 100;
-
-function getRandomNumber(){
-    let number = Math.round(Math.random()*100)
-    console.log(number)
-}
-getRandomNumber()
+    removeElement('teste3')
 
 
-// 5b) Crie uma lista vazia [] e vá adicionando números aleatórios nesta lista até que a lista tenha 10 números inseridos nela;
-//     OBS: só podem ser adicionados a esta lista os seguintes números:
-//     - números ímpares que estão entre 14 e 50;
-//     - números múltiplos de 12;
+    // 5) Crie uma função que gera um número aleátorio entre 0 e 100;
+
+    function getRandomNumber() {
+        let number = Math.round(Math.random() * 100)
+        console.log(number)
+    }
+    getRandomNumber()
+
+
+    // 5b) Crie uma lista vazia [] e vá adicionando números aleatórios nesta lista até que a lista tenha 10 números inseridos nela;
+    //     OBS: só podem ser adicionados a esta lista os seguintes números:
+    //     - números ímpares que estão entre 14 e 50;
+    //     - números múltiplos de 12;
+
+    let arrayList = []
+    let number = Math.round(Math.random() * 100)
+
+    do {
+        number = Math.round(Math.random() * 100)
+        if (number >= 14 && number <= 50) {
+            if (number % 12 === 0) {
+                arrayList.push(number)
+            }
+        }
+
+    } while (arrayList.length < 10)
+    console.log(arrayList)
+
+

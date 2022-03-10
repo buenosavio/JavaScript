@@ -1,6 +1,11 @@
 <<<<<<<<<<<<<<<<<<<<<<<<<<< Aulas de JavaScript >>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 Data      .: 09/03/2022 <br/>
+Conteúdo  .: Exercícios terceira aula<br/>
+Diretório .: JavaScript\exercicio3\exe2.js <br/>
+Descrição .: Realizado exercícios sobre functions, array methods, string methods<br/>
+
+Data      .: 09/03/2022 <br/>
 Conteúdo  .: Exercícios prática em aula<br/>
 Diretório .: JavaScript\exercicio3\exe1.js <br/>
 Descrição .: Realizado exercícios em aula sobre functions<br/>
