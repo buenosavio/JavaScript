@@ -94,20 +94,21 @@ function orderBy(array) {
     // 5b) Crie uma lista vazia [] e vá adicionando números aleatórios nesta lista até que a lista tenha 10 números inseridos nela;
     //     OBS: só podem ser adicionados a esta lista os seguintes números:
     //     - números ímpares que estão entre 14 e 50;
-    //     - números múltiplos de 12;
+    //     - números múltiplos de 12;    
 
-    let arrayList = []
-    let number = Math.round(Math.random() * 100)
-
+function generateArray() {
     do {
-        number = Math.round(Math.random() * 100)
-        if (number >= 14 && number <= 50) {
-            if (number % 12 === 0) {
-                arrayList.push(number)
-            }
+        let number = Math.round(Math.random() * 100)
+        let arrayList = []
+        if (number > 14 && number < 50 && number%2 !== 0) { //se for impar entre 14 e 50
+            arrayList.push(number)
+        } else if (number%12===0){ // se for par, mas multiplo de 12
+            arrayList.push(number)
         }
 
     } while (arrayList.length < 10)
-    console.log(arrayList)
+    return arrayList
+}
+    
 
 

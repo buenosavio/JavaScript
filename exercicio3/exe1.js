@@ -13,10 +13,9 @@ listValues([1, 'Olá', undefined, 99999, 'Texto qualquer'])
 /*2) Crie uma função que receba uma string e retorne esta string sem nenhum espaço em branco no início e no fim 
    e todos caracteres em maiúsculo;
    // ex: minhaFuncao('      Oi, essa é uma   string   qualquer   ') => deve retornar a string: 'OI, ESSA É UMA STRING   QUALQUER'*/
-let textFormated, frase='';
 
 function deleteSpace(text) {
-    textFormated = text.trim().toUpperCase()
+    let textFormated = text.trim().toUpperCase()
     return textFormated
 }
 deleteSpace('      Oi, essa é uma   string   qualquer   ')
@@ -26,11 +25,12 @@ deleteSpace('      Oi, essa é uma   string   qualquer   ')
 	// ex: minhaFuncao('Oi,    essa    é    uma   string    qualquer') => deve retornar a string: 'Oi, essa é uma string qualquer'*/
 
 function deleteAllSpace(textFormated) {
-    let words = textFormated.split(' ');
+    let words = textFormated.split(' ')
+    let frase=''
     for (wordSingle of words) {
-        let isLastElement = words.indexOf(wordSingle) === words.length -1;
+        let isLastElement = words.indexOf(wordSingle) === words.length -1
         wordSingle !== '' 
-                        ? isLastElement===false 
+                        ? !isLastElement 
                             ? frase += wordSingle + ' ' 
                             : frase += wordSingle
                         : null
@@ -44,14 +44,16 @@ deleteAllSpace(textFormated)
    chamada caso algum dos números informados seja inválido.
    Esta função de Callback exibe somente a msg no console 'Algum número digitado foi inválido';*/
 
-let notValid="Algum número digitado é inválido!"
+const NOT_VALID="Algum número digitado é inválido!"
 
-function messageInvalidValue(notValid) {
-    console.log(notValid)
+function messageInvalidValue(NOT_VALID) {
+    console.log(NOT_VALID)
 }
 
 function calculator(numberOne, numberTwo) {
-    isNaN(numberOne)||isNaN(numberTwo) ? messageInvalidValue(notValid) : console.log(parseFloat(numberOne) + parseFloat(numberTwo))
+    parseFloat(numberOne)
+    parseFloat(numberTwo)
+    isNaN(numberOne)||isNaN(numberTwo) ? messageInvalidValue(NOT_VALID) : console.log(numberOne + numberTwo)
 }
 calculator(1.5,15)
 
