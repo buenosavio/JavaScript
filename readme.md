@@ -1,5 +1,10 @@
 <<<<<<<<<<<<<<<<<<<<<<<<<<< Aulas de JavaScript >>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+Data      .: 11/03/2022 <br/>
+Conteúdo  .: Exercícios quarta aula<br/>
+Diretório .: JavaScript\exercicio5\exe1.js <br/>
+Descrição .: Realizado exercícios sobre Functions e lógica <br/>
+
 Data      .: 10/03/2022 <br/>
 Conteúdo  .: Exercícios quarta aula<br/>
 Diretório .: JavaScript\exercicio4\exe1.js <br/>
