@@ -1,4 +1,4 @@
-/*Prática da Function Arrow*/
+///*Prática da Function Arrow*/
 const isPositive = (number) => number > 0
 
 const randomNumber = () => Math.round(Math.random()*10)
