@@ -7,25 +7,25 @@
 
 let currentSalary = 1000.00
 let initialTax = 15.00
-years = [2016,2017,2018,2019,2020,2021,2022]
+years = [2016, 2017, 2018, 2019, 2020, 2021, 2022]
 
 for (year of years) {
     if (year <= 2018) {
-        (currentSalary) += initialTax
+        currentSalary += (initialTax / 1000) * currentSalary
         console.log(`Aumento padrão no ano de ${year}. Salário atualizado para ${currentSalary.toFixed(2)}`)
     } else {
         initialTax += initialTax
-        currentSalary += (initialTax/1000)*currentSalary
+        currentSalary += (initialTax / 1000) * currentSalary
         console.log(`Aumento composto no ano de ${year}. Salário atualizado para ${currentSalary.toFixed(2)}`)
     }
 }
 
-
 /*2) Faça um programa que calcule a soma dos primeiros 50 números pares;*/
 
-let sum = 0
-for (let i=0; i<=50; i+=2) {
-    sum += i
+let sum = 0, contador=0
+
+for (let i=1; i<=100; i++) {
+    i%2===0 ? sum+=i : null
 }
 console.log(`Soma dos pares: ${sum} `)
 
@@ -33,15 +33,20 @@ console.log(`Soma dos pares: ${sum} `)
 Exiba (console) a tabuada desse número de 1 a 10;*/
 
 let tabuadaNumber = prompt("Informe o número desejado: ")
-for (let i=1; i<=10; i++) {
-    console.log(`${i}x${tabuadaNumber} é igual a ${i*tabuadaNumber}`)
+if (!isNaN(tabuadaNumber)) {
+    for (let i=1; i<=10; i++) {
+        console.log(`${i}x${tabuadaNumber} é igual a ${i*tabuadaNumber}`)
+    }
+} else {
+    console.log("ERRO - 12Digite um número válido!")       
 }
 
-/*4) Faça um algoritmo que apresente o quadrado de cada um dos números pares entre 1 e 100;*/
 
+/*4) Faça um algoritmo que apresente o quadrado de cada um dos números pares entre 1 e 100;*/
 for (let i=2; i<=100; i+=2) {
     console.log(`${i} elevado ao quadrado é igual a ${i*i}`)
 }
+
 
 /*5) Faça um algoritmo que imprima no console os valores como se fosse um relógio durante 1 minuto;
 	Exemplo do console:
@@ -56,7 +61,7 @@ for (let i=2; i<=100; i+=2) {
 let i = 1
 
 function displaySeconds(i) {
-    console.log(`0${i}`.slice(-2))
+    console.log( i<10 ? `0${i}` : i)
     if (i>=60) {
         clearInterval(clockOn)
     }
@@ -82,8 +87,10 @@ do {
     if (userOption === '1') {
         value = prompt("Digite o valor: ") 
         soma += parseInt(value)
-    } else {
-        alert(`A soma é: ${soma}`)
+    } else if (userOption === '2' && soma !== 0) {
+        alert(`A soma é de ${soma}`)
+    } else if (userOption !== '1' && userOption !== '2'){
+        alert("Digite 1 ou 2")
     }
         
 } while (userOption !== '2')

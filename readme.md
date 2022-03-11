@@ -1,5 +1,10 @@
 <<<<<<<<<<<<<<<<<<<<<<<<<<< Aulas de JavaScript >>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+Data      .: 10/03/2022 <br/>
+Conteúdo  .: Exercícios 4 aula<br/>
+Diretório .: JavaScript\exercicio4\exe1.js <br/>
+Descrição .: Realizado exercícios em aula sobre Arrow Functions <br/>
+
 Data      .: 09/03/2022 <br/>
 Conteúdo  .: Exercícios terceira aula<br/>
 Diretório .: JavaScript\exercicio3\exe2.js <br/>
