@@ -1,5 +1,10 @@
 <<<<<<<<<<<<<<<<<<<<<<<<<<< Aulas de JavaScript >>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+Data      .: 13/03/2022 <br/>
+Conteúdo  .: Exercícios quinta aula<br/>
+Diretório .: JavaScript\exercicio6\list01.js <br/>
+Descrição .: Realizado exercícios sobre Find, ForEach, Map, Filter, Reduce, Object <br/>
+
 Data      .: 11/03/2022 <br/>
 Conteúdo  .: Exercícios quarta aula<br/>
 Diretório .: JavaScript\exercicio5\exe1.js <br/>
