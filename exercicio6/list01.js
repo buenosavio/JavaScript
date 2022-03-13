@@ -8,7 +8,7 @@
     id: 0           (number, deve ser sempre único, ou seja, não podem existir dois produtos com o mesmo id)
     descricao: "",  (string)
     preco: 0        (number)
-  }
+}
 
   Teremos também uma lista de produtos que será uma variável de escopo global no sistema (let, não utilizem var);
   Criem um sistema onde seja possível:
@@ -59,36 +59,36 @@ do {
 
   if (menuOption !== '9') {
     switch (menuOption){
-      case '1':
+      case '1': // cadastrar um produto
         counter++
         descricaoProduto = prompt("DESCRIÇÃO")
         valorProduto = parseFloat(prompt("PREÇO"))
         !isNaN(valorProduto) ? insereProduto() : ERRO_VALOR_INVALIDO       
         break
-      case '2':
-        let idExcluirProduto = prompt("Informe o código:")
+      case '2': // excluir um produto pelo código
+        let idExcluirProduto = prompt("Informe o código do produto para excluir:")
         let produtoExiste = produtos.find(x => {return x.id === parseInt(idExcluirProduto)})
         produtoExiste ? excluiProduto(idExcluirProduto) : ERRO_NAO_ENCONTRADO()  
         break
-      case '3':
+      case '3': // encontrar um produto pelo código
         let idProduto = prompt("Informe o código do produto desejado:")
         let encontrou = produtos.find(x => {return x.id === parseInt(idProduto)})
         encontrou ? console.table(encontrou) : ERRO_NAO_ENCONTRADO()  
         break
-      case '4':
+      case '4': // imprimir no console em tabela a lista de produtos cadastrados
         produtos.length !==0 ? console.table(produtos) : ERRO_SEM_PRODUTOS()
         break
-      case '5':
+      case '5': // imprimir no console em tabela a lista de descrições dos produtos cadastrados
         produtos.length !==0 ? console.table(produtos.map(x => {return x.descricao})) : ERRO_SEM_PRODUTOS()
         break
-      case '6':
+      case '6': // selectionar uma descrição desejada e imprimir no console em tabela somente a descrição e preço dos produtos que possuem aquela descrição escolhida; 
         let descProduto = prompt("Informe a descrição do produto desejado:")
         let finderProduct = produtos.filter(x => {return x.descricao === descProduto}) 
-        let xyz =[]
+        let xyz =[] //criado novo array para evitar pegar referência de *produtos*
         finderProduct.forEach(x => {xyz.push({descricao:x.descricao, preco:x.preco})})
         xyz.length !==0 ? console.table(xyz) : ERRO_NAO_ENCONTRADO()
       break
-      case '7':  
+      case '7': // verificar o total de patrimônio da loja (preço total de todos os produtos)
         produtos.length !==0? somaValores() : ERRO_SEM_PRODUTOS()
       break
       default:
@@ -96,6 +96,6 @@ do {
     }
   }
   
-} while (menuOption !== '9');
+} while (menuOption !== '9'); //opcao para sair do sistema
 
 
