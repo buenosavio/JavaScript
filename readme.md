@@ -1,5 +1,10 @@
 <<<<<<<<<<<<<<<<<<<<<<<<<<< Aulas de JavaScript >>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+Data      .: 14/03/2022 <br/>
+Conteúdo  .: Exercícios sobre classes<br/>
+Diretório .: JavaScript\exercicio7\exe2.js <br/>
+Descrição .: Realizado exercícios sobre class, constructor <br/>
+
 Data      .: 13/03/2022 <br/>
 Conteúdo  .: Exercícios quinta aula<br/>
 Diretório .: JavaScript\exercicio6\list01.js <br/>
