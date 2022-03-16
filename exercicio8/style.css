@@ -1,0 +1,30 @@
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+.superior-menu {
+    align-items: center;
+    text-align: center;
+    background-color: #fafafa;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+}
+
+.list-items {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemUnico {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #cccc;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 0px 15px;
+    width: 1200px;
+}
