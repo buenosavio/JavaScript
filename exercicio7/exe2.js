@@ -112,6 +112,7 @@ do {
             contador ++
             let colaborador = new Colaborador(contador, nomeColaborador, 0)
             colaboradores.push(colaborador)
+            alert('SUCESSO:\nColaborador cadastrado!')
             return colaboradores
         } else {
             alert('ERRO:\nInforme um nome válido!')
@@ -123,10 +124,18 @@ do {
     }
 
     const adicionaMarcacao = () => {
-        let idFunc = prompt("Informe índice do funcionário para salvar a marcação!") //próxima release aqui vou buscar pelo id
-        let qtdAtual = colaboradores[idFunc].marcacoesPonto
-        qtdAtual += 1
-        colaboradores[idFunc].marcacoesPonto = qtdAtual
+        let idFunc = prompt("Informe ID do funcionário para salvar a marcação!") //próxima release aqui vou buscar pelo id
+        idFunc = parseInt(idFunc)
+        let colaboradorMarcacao = colaboradores.filter(x => {return x.id === idFunc})
+        console.log('colaboradorMarcacao => ', colaboradorMarcacao)
+        let qtdAtual = colaboradorMarcacao.marcacoesPonto
+        console.log('qtdAtual => ',qtdAtual)
+
+        // console.log(colaboradorMarcacao)
+        // let qtdAtual = colaboradores[idFunc].marcacoesPonto
+        // alert('SUCESSO:\nMarcação Efetuada!!')
+        // qtdAtual += 1
+        // colaboradores[idFunc].marcacoesPonto = qtdAtual
     }
 
     const verificaAusencia = () => {

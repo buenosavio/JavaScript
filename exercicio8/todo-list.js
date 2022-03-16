@@ -19,6 +19,7 @@ const criaElementos = () => {
     //criado elementos e parametros da div filho
     const novoInput = document.createElement('input')
     novoInput.setAttribute('type', 'checkbox')
+    novoInput.setAttribute('id', `ckb-finali${contador}`)
     
     const novoParagrafo = document.createElement('p')
     novoParagrafo.textContent=buscaTextoDoInput()
@@ -54,7 +55,6 @@ const adicionaTarefas = () => {
     btnAdd.addEventListener('click', criaElementos);
 }
 
-
 adicionaTarefas()
 criaElementos()
 criaElementos()
@@ -62,3 +62,4 @@ criaElementos()
 criaElementos()
 criaElementos()
 removeElementos()
+
