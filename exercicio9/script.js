@@ -40,9 +40,26 @@ const validarEmail = (event) => {
     let arrayMail = [...mail].filter(char=>{return char === '@'})  
     let temUmArroba = arrayMail.length===1                                // retorna true se estiver ok
 
-    //validar ponto após o arroba. um nao pode estar seguido de outro. nao pode terminar com ponto. pelo menos duas letras depois do ponto.
-    
-    const ehValido = true;
+    //validar ponto após o arroba.  
+    let posicaoArroba = [...mail].indexOf('@')   
+    let depoisArroba = [...mail].slice(posicaoArroba+1, mail.length)
+    let temPontoAposArroba = depoisArroba.includes('.') //deve retornar true
+
+    //um . nao pode estar seguido de @
+    let posicaoPonto = [...depoisArroba].indexOf('.')
+    posicaoPonto = posicaoPonto > 1 //deve retornar true
+
+    // nao pode terminar com ponto.//pelo menos duas letras depois do ponto.
+    let ultimoNotPonto = [...depoisArroba].lastIndexOf('.')+2 < depoisArroba.length //deve retornar true se ficar ok
+
+    //deve possuir o dominio dbccompany
+    let dominioOk = depoisArroba.join().replaceAll(',','').includes('dbccompany')
+
+    const ehValido = firstLetra && temUmArroba && temPontoAposArroba && posicaoPonto && ultimoNotPonto && dominioOk;
+
+    const emailInvalido = document.getElementById('email-erro')
+    !ehValido ? emailInvalido.classList.remove('d-none') : emailInvalido.classList.add('d-none')
+
     return ehValido;
 }
 
@@ -132,9 +149,9 @@ const validarData = (event) => {
 
 const validarCadastro = (event) => {
   event.preventDefault();
-  console.log(`Cadastro ${validarNome() && validarData() /*&& validarEmail()*/ && validarSenha() ? 'válido!' : 'inválido'}`);
-  const totalmenteValido = validarNome() && validarData() /*&& validarEmail()*/ && validarSenha()
-  totalmenteValido ?  incluirCadastro() : incluirCadastro() //nao esquecer alterar para null >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  console.log(`Cadastro ${validarNome() && validarData() && validarEmail() && validarSenha() ? 'válido!' : 'inválido'}`);
+  const totalmenteValido = validarNome() && validarData() && validarEmail() && validarSenha()
+  totalmenteValido ?  incluirCadastro() : null
 }
 
 class Colaborador {
@@ -152,8 +169,6 @@ class Colaborador {
         this.senha = senha
     }
 }
-
-
 
 const incluirCadastro = (event) => {
     contadorId++
@@ -177,24 +192,24 @@ const incluirCadastro = (event) => {
     
     //colaborador
     const newp1 = document.createElement('p')
-    newp1.setAttribute('id',`info${contadorId}`)
     newp1.textContent='Nome:'
     const newp2 = document.createElement('p')
     newp2.textContent=nomeColaborador
+    newp2.setAttribute('id',`nome${contadorId}`)
     
     //nascimento
     const newp3 = document.createElement('p')
-    newp3.setAttribute('id',`info${contadorId}`)
     newp3.textContent='Nascimento'
     const newp4 = document.createElement('p')
     newp4.textContent=dataNascimento
+    newp4.setAttribute('id',`nasc${contadorId}`)
     
     //email
     const newp5 = document.createElement('p')
-    newp5.setAttribute('id',`info${contadorId}`)
     newp5.textContent = 'Email'
     const newp6 = document.createElement('p')
     newp6.textContent=email
+    newp6.setAttribute('id',`mail${contadorId}`)
 
     newLi.append(newDiv1,newDiv2,newDiv3)
     newDiv1.append(newp1, newp2)
@@ -211,11 +226,10 @@ const incluirCadastro = (event) => {
 }
 
 const listaColaboradoresConsole = (event) => {
-    alert('Selecione F12')
     let x = listaColaboradores.length
-    
-    for (let i=0;i<=x;i++) {
-    let nome = document.getElementById(`info${i}`)
-    console.log(nome)
+    console.log(' ------- COLABORADORES CADASTRADOS --------------------')
+    for (let i=1;i<=x;i++) {
+    let nome = document.getElementById(`nome${i}`).textContent
+    console.log('Nome: ', nome)
     }
 }
