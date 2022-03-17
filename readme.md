@@ -1,4 +1,9 @@
-<<<<<<<<<<<<<<<<<<<<<<<<<<< Aulas de JavaScript >>>>>>>>>>>>>>>>>>>>>>>>>>>
+<h1>Aulas de JavaScript</h1>
+
+Data      .: 17/03/2022 <br/>
+Conteúdo  .: Exercícios oitava aula<br/>
+Diretório .: JavaScript\exercicio9\script.js <br/>
+Descrição .: Realizado exercícios sobre DOM, validações e Moment.js <br/>
 
 Data      .: 14/03/2022 <br/>
 Conteúdo  .: Exercícios sobre classes<br/>
