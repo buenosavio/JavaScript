@@ -1,6 +1,6 @@
 <h1>Aulas de JavaScript</h1>
 
-Data      .: 18/03/2022 <br/>
+Data      .: 18/03/2022  <br/>
 Conteúdo  .: Exercícios penultima<br/>
 Diretório .: JavaScript\exercicio10\script.js <br/>
 Descrição .: Realizado exercícios sobre CRUD utilizando axios e json-server <br/>
