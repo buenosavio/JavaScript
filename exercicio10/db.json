@@ -1,0 +1,60 @@
+{
+  "colaboradores": [
+    {
+      "nome": "Savio",
+      "dataNascimento": "01/01/0001",
+      "email": "321",
+      "senha": "321",
+      "id": 1
+    },
+    {
+      "nome": "William",
+      "dataNascimento": "01/01/0001",
+      "email": "email@email.com",
+      "senha": "123",
+      "id": 6
+    },
+    {
+      "nome": "Savio2",
+      "dataNascimento": "01/01/0001",
+      "email": "email@email.com",
+      "senha": "123",
+      "id": 7
+    },
+    {
+      "nome": "Antonio1",
+      "dataNascimento": "01/01/0001",
+      "email": "email@email.com",
+      "senha": "123",
+      "id": 8
+    },
+    {
+      "nome": "Antonio2",
+      "dataNascimento": "01/01/0001",
+      "email": "email@email.com",
+      "senha": "123",
+      "id": 9
+    },
+    {
+      "nome": "Antonio3",
+      "dataNascimento": "01/01/0001",
+      "email": "email@email.com",
+      "senha": "123",
+      "id": 10
+    },
+    {
+      "nome": "Antonio4",
+      "dataNascimento": "01/01/0001",
+      "email": "email@email.com",
+      "senha": "123",
+      "id": 11
+    },
+    {
+      "nome": "Sávio Bueno",
+      "dataNascimento": "21/05/1996",
+      "email": "savio@dbccompany.com",
+      "senha": "123__Abc",
+      "id": 12
+    }
+  ]
+}
